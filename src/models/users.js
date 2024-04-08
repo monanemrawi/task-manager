@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        default: 'Anon',
         trim: true
     }, 
     age: {
@@ -85,7 +84,6 @@ userSchema.statics.findByCredentials = async (email, password) => {
 
     return user
 }
-
 
 // Hash the plain text password before saving
 userSchema.pre('save', async function (next) {
